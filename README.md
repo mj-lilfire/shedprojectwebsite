@@ -20,22 +20,34 @@ No frameworks or build tooling are used unless explicitly approved (see the Mast
 
 ```
 shedprojectwebsite/
-├── index.html            Site entry point / homepage
-├── README.md             This file
-├── CLAUDE.md              Instructions for Claude Code sessions
-├── CHANGELOG.md           Versioned history of every release
-├── assets/                Static media (fonts, icons, images)
-├── components/             Reusable HTML/JS component partials
-├── css/                    Stylesheets
-├── js/                     Vanilla JavaScript modules
-├── pages/                  Secondary HTML pages
-├── products/                Shed product catalogue content
-├── quote-builder/           The quote builder tool
-└── docs/                   Project documentation
+├── index.html                     Homepage (design system + layout framework)
+├── README.md                      This file
+├── CLAUDE.md                       Instructions for Claude Code sessions
+├── CHANGELOG.md                    Versioned history of every release
+├── assets/                         Static media (fonts, icons, images)
+├── components/                      Canonical reusable HTML partials (navigation, footer)
+├── css/
+│   ├── variables.css                 Design tokens (colour, type, spacing, radius, shadow, breakpoints)
+│   ├── base.css                      Reset and base element styles
+│   ├── typography.css                Type scale
+│   ├── layout.css                    Containers, grid/flex utilities, image placeholders
+│   ├── animations.css                Scroll-reveal animation
+│   └── components/                  buttons.css, cards.css, navigation.css, footer.css, sections.css
+├── js/
+│   ├── main.js                       Entry point
+│   └── modules/                     navigation.js, animations.js
+├── pages/                          Secondary HTML pages
+├── products/                        Shed product catalogue content
+├── quote-builder/                   The quote builder tool
+└── docs/                           Project documentation
     └── MASTER_DEVELOPMENT_STANDARD.md
 ```
 
 See the Master Development Standard, Section 4, for the full explanation of each folder's purpose.
+
+## Design System
+
+The homepage design system (colour palette, typography, spacing, radius, shadows, transitions, breakpoints) is defined once as CSS custom properties in `css/variables.css` and consumed throughout `css/` — see Master Development Standard, Section 7. Reusable components (navigation, footer, buttons, cards, hero/CTA sections) live under `css/components/`; the navigation and footer markup is additionally kept as canonical source in `components/` for reuse on future pages.
 
 ## Local Development
 
@@ -52,4 +64,4 @@ Every change should be scoped as a release with an **Objective, Governance, Scop
 
 ## Current Version
 
-**v0.2.0** — Master Development Standard. See [CHANGELOG.md](CHANGELOG.md) for full release history.
+**v0.3.0** — Website Foundation & Design System. See [CHANGELOG.md](CHANGELOG.md) for full release history.

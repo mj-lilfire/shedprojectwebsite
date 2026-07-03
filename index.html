@@ -1,15 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shed Project Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shed Project Website — Website Foundation</title>
+  <meta
+    name="description"
+    content="Shed Project Website homepage foundation: design system and layout scaffold. Placeholder content only — business content to follow in a later release."
+  />
+
+  <!-- This is a pre-launch foundation build with placeholder content only; keep it out of search results until real content ships. -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shed Project — Premium Outdoor Living" />
+  <meta
+    property="og:description"
+    content="Placeholder homepage for the Shed Project Website. Business content to follow in a later release."
+  />
+
+  <meta name="theme-color" content="#1B4332" />
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B4332'/%3E%3Ctext x='32' y='42' font-family='Poppins,sans-serif' font-size='26' fill='%23FAF7F2' text-anchor='middle'%3ESP%3C/text%3E%3C/svg%3E"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/cards.css" />
+  <link rel="stylesheet" href="css/components/navigation.css" />
+  <link rel="stylesheet" href="css/components/footer.css" />
+  <link rel="stylesheet" href="css/components/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <noscript>
+    <style>
+      .fade-in-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <h1>My First Website</h1>
+  <!-- Reusable navigation — canonical source: components/navigation.html -->
+  <header class="site-header" data-site-header>
+    <div class="container nav-container">
+      <a href="#top" class="logo" aria-label="Shed Project — Home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Shed Project</span>
+      </a>
 
-    <p>If you can read this, Live Server is working.</p>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
 
+      <nav id="primary-navigation" class="primary-navigation" aria-label="Primary">
+        <ul class="nav-menu">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#why-choose-us">Why Choose Us</a></li>
+          <li><a href="#featured-products">Products</a></li>
+          <li><a href="#gallery-preview">Gallery</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <a href="#cta-banner" class="btn btn-primary nav-cta">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero fade-in-on-scroll" id="top">
+      <div class="hero-media">
+        <div
+          class="image-placeholder image-placeholder--hero"
+          role="img"
+          aria-label="Placeholder: hero photograph of a modern, premium garden room at dusk"
+        >
+          <span aria-hidden="true">Hero Image Placeholder</span>
+        </div>
+      </div>
+      <div class="container hero-content">
+        <p class="eyebrow">Premium Outdoor Living</p>
+        <h1>Crafted Spaces for Modern Living</h1>
+        <p class="lead">
+          Placeholder introduction copy describing a premium outdoor living brand built on
+          contemporary architecture, quality craftsmanship, and considered materials.
+        </p>
+        <div class="hero-actions">
+          <a href="#cta-banner" class="btn btn-primary">Get a Quote</a>
+          <a href="#why-choose-us" class="btn btn-outline-inverse">Explore More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section intro fade-in-on-scroll" aria-labelledby="intro-heading">
+      <div class="container split-content">
+        <div class="split-media">
+          <div
+            class="image-placeholder image-placeholder--square"
+            role="img"
+            aria-label="Placeholder: photograph of considered interior craftsmanship"
+          >
+            <span aria-hidden="true">Image Placeholder</span>
+          </div>
+        </div>
+        <div class="split-text">
+          <p class="eyebrow">Our Philosophy</p>
+          <h2 id="intro-heading">Placeholder Section Heading</h2>
+          <p>
+            Placeholder introductory paragraph describing the brand's approach to contemporary
+            outdoor architecture, premium materials, and a considered, uncluttered aesthetic.
+          </p>
+          <p>
+            Placeholder supporting paragraph. Real copy will replace this text in a future,
+            content-focused release.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" id="why-choose-us" aria-labelledby="why-choose-us-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2 id="why-choose-us-heading">Placeholder Reasons to Choose Us</h2>
+          <p class="lead">Placeholder supporting copy for this section.</p>
+        </div>
+        <div class="grid grid-4">
+          <article class="card card-feature fade-in-on-scroll">
+            <div class="card-icon" aria-hidden="true">✓</div>
+            <h3>Quality Craftsmanship</h3>
+            <p>Placeholder description of craftsmanship standards.</p>
+          </article>
+          <article class="card card-feature fade-in-on-scroll">
+            <div class="card-icon" aria-hidden="true">◆</div>
+            <h3>Premium Materials</h3>
+            <p>Placeholder description of material quality.</p>
+          </article>
+          <article class="card card-feature fade-in-on-scroll">
+            <div class="card-icon" aria-hidden="true">⌂</div>
+            <h3>Contemporary Design</h3>
+            <p>Placeholder description of design philosophy.</p>
+          </article>
+          <article class="card card-feature fade-in-on-scroll">
+            <div class="card-icon" aria-hidden="true">★</div>
+            <h3>Trusted Service</h3>
+            <p>Placeholder description of service standards.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products (placeholder only — catalogue is out of scope for this release) -->
+    <section class="section" id="featured-products" aria-labelledby="featured-products-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Featured Products</p>
+          <h2 id="featured-products-heading">Placeholder Product Range</h2>
+          <p class="lead">Placeholder supporting copy for this section.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder"
+                role="img"
+                aria-label="Placeholder: photograph of a garden room product"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <span class="badge">Coming Soon</span>
+            <h3>Garden Room — Placeholder</h3>
+            <p>Placeholder product description.</p>
+            <p class="price">Price Placeholder</p>
+            <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder"
+                role="img"
+                aria-label="Placeholder: photograph of a garden studio product"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <span class="badge">Coming Soon</span>
+            <h3>Studio — Placeholder</h3>
+            <p>Placeholder product description.</p>
+            <p class="price">Price Placeholder</p>
+            <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder"
+                role="img"
+                aria-label="Placeholder: photograph of a workshop product"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <span class="badge">Coming Soon</span>
+            <h3>Workshop — Placeholder</h3>
+            <p>Placeholder product description.</p>
+            <p class="price">Price Placeholder</p>
+            <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Preview (homepage teaser only — full gallery feature is out of scope) -->
+    <section class="section" id="gallery-preview" aria-labelledby="gallery-preview-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Gallery</p>
+          <h2 id="gallery-preview-heading">Placeholder Gallery Preview</h2>
+          <p class="lead">Placeholder supporting copy for this section.</p>
+        </div>
+        <div class="grid grid-4">
+          <figure class="card card-gallery fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder image-placeholder--square"
+                role="img"
+                aria-label="Placeholder gallery photograph one"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <figcaption>Placeholder Caption</figcaption>
+          </figure>
+          <figure class="card card-gallery fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder image-placeholder--square"
+                role="img"
+                aria-label="Placeholder gallery photograph two"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <figcaption>Placeholder Caption</figcaption>
+          </figure>
+          <figure class="card card-gallery fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder image-placeholder--square"
+                role="img"
+                aria-label="Placeholder gallery photograph three"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <figcaption>Placeholder Caption</figcaption>
+          </figure>
+          <figure class="card card-gallery fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder image-placeholder--square"
+                role="img"
+                aria-label="Placeholder gallery photograph four"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <figcaption>Placeholder Caption</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Testimonials</p>
+          <h2 id="testimonials-heading">Placeholder Customer Testimonials</h2>
+          <p class="lead">Placeholder supporting copy for this section.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5 (placeholder rating)</span>
+            <p>&ldquo;Placeholder testimonial quote describing a positive customer experience.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Customer Name Placeholder</p>
+                <p class="author-role">Location Placeholder</p>
+              </div>
+            </div>
+          </article>
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5 (placeholder rating)</span>
+            <p>&ldquo;Placeholder testimonial quote describing a positive customer experience.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Customer Name Placeholder</p>
+                <p class="author-role">Location Placeholder</p>
+              </div>
+            </div>
+          </article>
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5 (placeholder rating)</span>
+            <p>&ldquo;Placeholder testimonial quote describing a positive customer experience.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Customer Name Placeholder</p>
+                <p class="author-role">Location Placeholder</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner fade-in-on-scroll" id="cta-banner" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Placeholder Call To Action Heading</h2>
+        <p class="lead">Placeholder supporting copy inviting the visitor to take the next step.</p>
+        <a href="#" class="btn btn-outline-inverse">Get a Quote (Placeholder)</a>
+      </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="section" id="latest-news" aria-labelledby="latest-news-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Latest News</p>
+          <h2 id="latest-news-heading">Placeholder News &amp; Updates</h2>
+          <p class="lead">Placeholder supporting copy for this section.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder image-placeholder--wide"
+                role="img"
+                aria-label="Placeholder news image one"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <p class="news-date">Placeholder Date</p>
+            <h3>Placeholder News Headline</h3>
+            <p>Placeholder excerpt summarising the placeholder article.</p>
+            <a href="#" class="btn btn-outline btn-sm">Read More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder image-placeholder--wide"
+                role="img"
+                aria-label="Placeholder news image two"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <p class="news-date">Placeholder Date</p>
+            <h3>Placeholder News Headline</h3>
+            <p>Placeholder excerpt summarising the placeholder article.</p>
+            <a href="#" class="btn btn-outline btn-sm">Read More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <div
+                class="image-placeholder image-placeholder--wide"
+                role="img"
+                aria-label="Placeholder news image three"
+              >
+                <span aria-hidden="true">Image Placeholder</span>
+              </div>
+            </div>
+            <p class="news-date">Placeholder Date</p>
+            <h3>Placeholder News Headline</h3>
+            <p>Placeholder excerpt summarising the placeholder article.</p>
+            <a href="#" class="btn btn-outline btn-sm">Read More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable footer — canonical source: components/footer.html -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-column footer-brand">
+        <a href="#top" class="logo" aria-label="Shed Project — Home">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="logo-text">Shed Project</span>
+        </a>
+        <p class="footer-tagline">Premium outdoor living spaces, placeholder tagline.</p>
+
+        <form class="newsletter-form" aria-label="Newsletter signup">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input
+            type="email"
+            id="newsletter-email"
+            name="email"
+            placeholder="Your email address"
+            autocomplete="email"
+            disabled
+          />
+          <button type="submit" class="btn btn-outline" disabled>Subscribe</button>
+        </form>
+        <p class="footer-note">Newsletter signup placeholder — not yet functional.</p>
+      </div>
+
+      <nav class="footer-column" aria-label="Company">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Process</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-column" aria-label="Products">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="#">Garden Rooms</a></li>
+          <li><a href="#">Studios</a></li>
+          <li><a href="#">Workshops</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-column" aria-label="Information">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Delivery &amp; Installation</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-column" aria-label="Contact">
+        <h3>Contact</h3>
+        <ul class="footer-contact-list">
+          <li>Placeholder Address Line 1</li>
+          <li>Placeholder Town, Placeholder Postcode</li>
+          <li><a href="tel:+440000000000">Placeholder Phone Number</a></li>
+          <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+        </ul>
+        <ul class="social-list" aria-label="Social media">
+          <li><a href="#" class="social-icon" aria-label="Facebook (placeholder)">FB</a></li>
+          <li><a href="#" class="social-icon" aria-label="Instagram (placeholder)">IG</a></li>
+          <li><a href="#" class="social-icon" aria-label="Pinterest (placeholder)">PIN</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>&copy; <span data-current-year>2026</span> Shed Project. All rights reserved.</p>
+      <ul class="footer-legal">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

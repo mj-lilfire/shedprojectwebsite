@@ -1,0 +1,141 @@
+/* Containers, grid/flex utilities, and shared layout primitives. */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.section {
+  padding-block: var(--space-9);
+}
+
+.section-header {
+  max-width: 40rem;
+  margin-bottom: var(--space-7);
+}
+
+.section-header.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-header.center .lead {
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid > * {
+  /* Grid items default to a min-width of "auto", which lets long
+     unbreakable content (e.g. a URL) force a track wider than its fr
+     share and overflow the page horizontally. */
+  min-width: 0;
+}
+
+.grid-2,
+.grid-3,
+.grid-4 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+
+.split-content {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .split-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split-content.reverse .split-media {
+    order: 2;
+  }
+}
+
+/*
+  Image placeholder: stands in for real photography until business imagery
+  is available. Uses role="img" with an aria-label describing the intended
+  photograph, so the page remains meaningful to assistive technology ahead
+  of real assets being introduced.
+*/
+.image-placeholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary-light) 100%);
+  border: 1px dashed var(--color-secondary-dark);
+  border-radius: var(--radius-md);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  overflow: hidden;
+}
+
+.image-placeholder--hero {
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  border: none;
+}
+
+.image-placeholder--square {
+  aspect-ratio: 1 / 1;
+}
+
+.image-placeholder--wide {
+  aspect-ratio: 16 / 9;
+}

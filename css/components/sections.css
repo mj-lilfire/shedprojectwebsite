@@ -1,0 +1,89 @@
+/* Homepage section building blocks: hero, CTA banner, and related helpers. */
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: min(90vh, 780px);
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-text-inverse);
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-media .image-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+/* The hero placeholder sits full-bleed behind the heading; its visible
+   label would collide with that text, so only the accessible name
+   (role="img" + aria-label on the container) is exposed here. */
+.hero-media .image-placeholder span {
+  display: none;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 42, 29, 0.55) 0%, rgba(15, 42, 29, 0.8) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+  padding-block: var(--space-9);
+}
+
+.hero-content h1 {
+  color: var(--color-text-inverse);
+  margin-block: var(--space-4);
+}
+
+.hero-content .eyebrow {
+  color: var(--color-accent);
+}
+
+.hero-content .lead {
+  color: rgba(250, 247, 242, 0.85);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.cta-banner {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding-block: var(--space-8);
+  text-align: center;
+}
+
+.cta-banner h2 {
+  color: var(--color-text-inverse);
+}
+
+.cta-banner p {
+  color: rgba(250, 247, 242, 0.85);
+  margin-inline: auto;
+  margin-top: var(--space-3);
+}
+
+.cta-banner .btn {
+  margin-top: var(--space-6);
+}
+
+.news-date {
+  color: var(--color-secondary-dark);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+}

@@ -4,6 +4,31 @@ All notable changes to this project are documented in this file. Every entry fol
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] — 2026-07-03 — Website Foundation & Design System
+
+**Objective:** Establish the complete visual and technical foundation for the Shed Project Website — global design system, reusable components, responsive layout, navigation, footer, and homepage framework — as the base for all future pages and features.
+
+**Governance:** Website Foundation release only. No product catalogue, individual product pages, quote builder, contact form functionality, blog, gallery feature, finance, customer portal, AI assistant, search, or e-commerce were implemented. No real business content was added — all copy, imagery, pricing, and contact details are explicit placeholders.
+
+**Scope:** Global CSS design tokens; reusable navigation and footer; homepage framework (hero, introduction, why choose us, featured products, gallery preview, testimonials, CTA banner, latest news); reusable button, card, and section components; subtle scroll/hover animations; responsive layout across mobile, tablet, and desktop; accessibility and performance foundations.
+
+**Deliverables:**
+- `css/variables.css` — design tokens: colour palette, typography scale, spacing, radius, shadows, transitions, containers.
+- `css/base.css`, `css/typography.css`, `css/layout.css`, `css/animations.css` — reset, type scale, layout/grid utilities, scroll-reveal animation.
+- `css/components/buttons.css`, `cards.css`, `navigation.css`, `footer.css`, `sections.css` — reusable component styles.
+- `js/main.js`, `js/modules/navigation.js`, `js/modules/animations.js` — mobile nav toggle, sticky header state, keyboard support, IntersectionObserver scroll reveal.
+- `components/navigation.html`, `components/footer.html` — canonical source markup for the reusable nav and footer (mirrored inline in `index.html`; copy verbatim into any future page).
+- `index.html` — rebuilt as the homepage framework with placeholder content only.
+
+**Acceptance Criteria:**
+- Complete responsive layout with no horizontal scrolling at mobile, tablet, or desktop widths (verified at 375/390/480/768/800/1024/1440px).
+- Design system, typography system, navigation, footer, homepage framework, and reusable components (buttons, cards, sections) are all in place.
+- Mobile-first, accessible markup: semantic HTML5, visible focus states, keyboard-operable navigation (including Escape-to-close), correct heading hierarchy, and accessible placeholder imagery (`role="img"` + `aria-label`).
+- No business content present — all copy, pricing, contact details, and social links are explicit placeholders.
+- Verified in a headless browser across breakpoints with no console errors.
+
+**Notes:** SEO deliverables named in the Master Development Standard, Section 12 (`sitemap.xml`, `robots.txt`) are intentionally deferred to a later, content-focused release — this page currently ships `<meta name="robots" content="noindex, nofollow">` since it contains placeholder content only.
+
 ## [0.2.0] — 2026-07-03 — Master Development Standard
 
 **Objective:** Establish the governing development standard for the Shed Project Website — architecture, workflow, coding standards, documentation requirements, governance, and release process — as the authoritative reference for all future development.

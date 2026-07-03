@@ -54,7 +54,30 @@ See Master Development Standard Sections 6–12 for design principles, CSS stand
 - Mobile-first, responsive CSS using shared variables/breakpoints — no hard-coded one-off values.
 - Reusable components (nav, footer, buttons, cards, gallery, forms, hero, testimonials) are built once under `components/`/`css/`/`js/` and reused — never duplicated per page.
 - Semantic HTML5 throughout; accessible by default.
+- Watch for CSS grid/flex "blowout": an unbreakable string (e.g. an email address) in a grid item can force its track wider than its `fr` share and cause horizontal overflow. Grid items get `min-width: 0` (see `.grid > *` in `css/layout.css`) and long placeholder strings get `overflow-wrap: anywhere`.
+- The site has no templating/build step, so `components/navigation.html` and `components/footer.html` are canonical *source* markup, not includes — copy them verbatim into any new page rather than re-authoring the nav/footer.
+- Before calling a UI change done, browser-test it at mobile, tablet, and desktop widths and check for console errors and horizontal scroll — see the Implementation Checklist below.
 
 ## Versioning and Releases
 
 Semantic versioning (`MAJOR.MINOR.PATCH`) per Master Development Standard, Section 3. Confirm the target version number with the user (or infer it from their prompt) before updating `CHANGELOG.md`.
+
+## Implementation Checklist
+
+Every delivery in this repository (and, per the user's stated preference, other Claude Code projects too) should close with this checklist, ticked off against what was actually done:
+
+```
+Implementation Checklist
+
+□ Review existing code before making changes.
+□ Reuse existing components wherever possible.
+□ Avoid regressions.
+□ Keep the code modular and maintainable.
+□ Update documentation.
+□ Update version references.
+□ Verify Live Server compatibility.
+□ Verify GitHub Pages compatibility.
+□ Prepare a Git commit recommendation.
+□ Prepare GitHub release notes.
+□ Summarise all files modified at completion.
+```

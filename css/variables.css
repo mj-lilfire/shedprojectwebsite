@@ -1,0 +1,113 @@
+/*
+  Global design tokens for the Shed Project Website.
+  Every colour, typography, spacing, radius, shadow and transition value
+  used across the site should reference one of these custom properties
+  rather than being hard-coded at the point of use.
+*/
+
+:root {
+  /* Colour palette — premium natural */
+  --color-primary: #1B4332;
+  --color-primary-dark: #0F2A1D;
+  --color-primary-light: #2D6A4F;
+  --color-secondary: #A9754F;
+  --color-secondary-dark: #7C5636;
+  --color-secondary-light: #C79B6F;
+  --color-accent: #9CAF97;
+  --color-accent-dark: #7C9A76;
+
+  --color-background: #FAF7F2;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F1ECE3;
+  --color-text: #262622;
+  --color-text-muted: #6B6B62;
+  --color-text-inverse: #FAF7F2;
+  --color-border: #E3DDD1;
+
+  --color-success: #4C7A51;
+  --color-warning: #C08A2E;
+  --color-error: #A9443E;
+
+  /* Typography */
+  --font-heading: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.15vw, 0.95rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.06rem + 0.3vw, 1.3rem);
+  --text-xl: clamp(1.35rem, 1.24rem + 0.5vw, 1.6rem);
+  --text-2xl: clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+  --text-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.75rem);
+  --text-4xl: clamp(2.5rem, 2rem + 2.5vw, 3.75rem);
+  --text-5xl: clamp(3rem, 2.3rem + 3.5vw, 4.75rem);
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.65;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale — base unit 4px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(15, 42, 29, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 42, 29, 0.08);
+  --shadow-lg: 0 20px 48px rgba(15, 42, 29, 0.14);
+  --shadow-focus: 0 0 0 3px rgba(156, 175, 151, 0.55);
+
+  /* Transitions */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 150ms var(--ease-standard);
+  --transition-base: 250ms var(--ease-standard);
+  --transition-slow: 450ms var(--ease-standard);
+
+  /* Containers */
+  --container-max-width: 1280px;
+  --container-padding: 1.25rem;
+
+  /* Z-index scale */
+  --z-nav: 100;
+  --z-overlay: 200;
+}
+
+/*
+  Responsive breakpoint reference (Master Development Standard, Section 7).
+  CSS custom properties cannot be read inside @media conditions, so these
+  values are hard-coded consistently at every usage site across the project:
+    small   : 480px
+    tablet  : 768px
+    desktop : 1024px
+    wide    : 1440px
+*/
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: 3rem;
+  }
+}

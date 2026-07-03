@@ -1,0 +1,126 @@
+/* Card component and its variants: feature, product, gallery, testimonial. */
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.badge {
+  align-self: flex-start;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Feature card */
+.card-feature .card-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-lg);
+}
+
+/* Product card */
+.card-product .card-media {
+  margin: calc(var(--space-6) * -1) calc(var(--space-6) * -1) 0;
+}
+
+.card-product .card-media .image-placeholder {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-bottom: none;
+}
+
+.card-product .price {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary-dark);
+}
+
+/* Gallery card */
+.card-gallery {
+  padding: 0;
+  position: relative;
+}
+
+.card-gallery .card-media .image-placeholder {
+  border-radius: var(--radius-lg);
+  border: none;
+}
+
+.card-gallery figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--space-4);
+  background: linear-gradient(0deg, rgba(15, 42, 29, 0.75), transparent);
+  color: var(--color-text-inverse);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.card-gallery:hover figcaption,
+.card-gallery:focus-within figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Testimonial card */
+.card-testimonial {
+  background: var(--color-surface-alt);
+}
+
+.card-testimonial .stars {
+  color: var(--color-secondary);
+  letter-spacing: 0.15em;
+}
+
+.card-testimonial .testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.card-testimonial .author-avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.card-testimonial .author-name {
+  font-weight: var(--font-weight-semibold);
+}
+
+.card-testimonial .author-role {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

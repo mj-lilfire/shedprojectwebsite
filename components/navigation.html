@@ -1,0 +1,44 @@
+<!--
+  Reusable site navigation.
+
+  This is the canonical source for the navigation markup. The project has
+  no templating or build step (Master Development Standard, Section 5), so
+  this exact markup is inlined directly in index.html. When a new page is
+  added under pages/, copy this block in verbatim rather than re-authoring
+  it, so there is only ever one navigation component to maintain.
+
+  Anchor links below (e.g. #why-choose-us) target sections on the homepage.
+  When this component is reused from a page other than index.html, prefix
+  those hrefs with the homepage path (e.g. ../index.html#why-choose-us).
+-->
+<header class="site-header" data-site-header>
+  <div class="container nav-container">
+    <a href="index.html#top" class="logo" aria-label="Shed Project — Home">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-text">Shed Project</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      aria-label="Toggle navigation menu"
+    >
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav id="primary-navigation" class="primary-navigation" aria-label="Primary">
+      <ul class="nav-menu">
+        <li><a href="index.html#top">Home</a></li>
+        <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+        <li><a href="index.html#featured-products">Products</a></li>
+        <li><a href="index.html#gallery-preview">Gallery</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+      </ul>
+      <a href="index.html#cta-banner" class="btn btn-primary nav-cta">Get a Quote</a>
+    </nav>
+  </div>
+</header>

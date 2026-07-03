@@ -1,0 +1,84 @@
+<!--
+  Reusable site footer.
+
+  Canonical source for the footer markup — see the note in
+  components/navigation.html for why this is copied rather than included
+  via a build step. All contact details, links and social handles below
+  are placeholders (Master Development Standard, Section 13): no real
+  business content shall be added until a release explicitly scopes it.
+-->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-column footer-brand">
+      <a href="index.html#top" class="logo" aria-label="Shed Project — Home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Shed Project</span>
+      </a>
+      <p class="footer-tagline">Premium outdoor living spaces, placeholder tagline.</p>
+
+      <form class="newsletter-form" aria-label="Newsletter signup">
+        <label for="newsletter-email" class="visually-hidden">Email address</label>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="Your email address"
+          autocomplete="email"
+          disabled
+        />
+        <button type="submit" class="btn btn-outline" disabled>Subscribe</button>
+      </form>
+      <p class="footer-note">Newsletter signup placeholder — not yet functional.</p>
+    </div>
+
+    <nav class="footer-column" aria-label="Company">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Process</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-column" aria-label="Products">
+      <h3>Products</h3>
+      <ul>
+        <li><a href="#">Garden Rooms</a></li>
+        <li><a href="#">Studios</a></li>
+        <li><a href="#">Workshops</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-column" aria-label="Information">
+      <h3>Information</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="#">Delivery &amp; Installation</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-column" aria-label="Contact">
+      <h3>Contact</h3>
+      <ul class="footer-contact-list">
+        <li>Placeholder Address Line 1</li>
+        <li>Placeholder Town, Placeholder Postcode</li>
+        <li><a href="tel:+440000000000">Placeholder Phone Number</a></li>
+        <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+      </ul>
+      <ul class="social-list" aria-label="Social media">
+        <li><a href="#" class="social-icon" aria-label="Facebook (placeholder)">FB</a></li>
+        <li><a href="#" class="social-icon" aria-label="Instagram (placeholder)">IG</a></li>
+        <li><a href="#" class="social-icon" aria-label="Pinterest (placeholder)">PIN</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <p>&copy; <span data-current-year>2026</span> Shed Project. All rights reserved.</p>
+    <ul class="footer-legal">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </div>
+</footer>
