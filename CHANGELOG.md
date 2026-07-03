@@ -4,6 +4,34 @@ All notable changes to this project are documented in this file. Every entry fol
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.6.0] — 2026-07-03 — Complete Product Experience & Sales Journey
+
+**Objective:** Complete the customer browsing journey from homepage through to individual products — a full demonstration catalogue of 24 products across the four existing categories, each with its own premium page, generated from a single reusable template and centralised data structure rather than hand-coded.
+
+**Governance:** Product experience release only. No ecommerce, shopping basket, checkout, customer accounts, Quote Builder backend, contact form backend, finance functionality, blog, or AI assistant were introduced. Every "Request a Quote" / "Enquire Now" / "Contact Us" CTA continues to point to the existing footer contact placeholder (`#contact`); the product filter bar and comparison table remain visual-only. All 24 products are explicitly demonstration content showcasing the site's architecture, not a real catalogue.
+
+**Scope:** A centralised, data-driven architecture for individual product pages (`scripts/products-data.js` + `scripts/product-template.js` + `scripts/generate-products.js`); 24 generated product pages (6 per category); enhancements to all 4 category landing pages (breadcrumb, Product Ranges, Compare, Testimonials, FAQ); a new reusable product-gallery component with a working thumbnail-swap and a lightbox-*placeholder* zoom affordance; new CSS components for specification tables, size/option/colour cards, and FAQ disclosures.
+
+**Deliverables:**
+- `scripts/products-data.js` — the single source of truth for every product: name, tagline, overview, sizes, roof/door/window/extras options, colours, and category-level FAQs/construction copy/feature-icon set. Adding a 25th product means adding one data entry, not writing HTML.
+- `scripts/product-template.js` — the one template that renders every individual product page (hero, gallery, overview, lifestyle introduction, key features, construction details, available sizes, roof/door/window options, optional extras, available colours, specification table, FAQs, related products within the same category, CTA with a brochure-placeholder link and enquiry button).
+- `scripts/generate-products.js` — a zero-dependency Node script (standard library only, no `package.json`) that writes all 24 pages from the two files above; safe to re-run at any time. This is author-time tooling only — it has no bearing on how the site is served (see `docs/MASTER_DEVELOPMENT_STANDARD.md`, Section 5).
+- `products/<category>/<slug>.html` × 24 — Compact Store, Apex Utility, Pent Workshop, Heavy Duty Store, Garden Store Plus, Premium Workshop (Utility Sheds); The Studio, The Retreat, The Cedar, The Oak, The Contemporary, The Pavilion (Garden Rooms); Classic Summer House, Corner Retreat, Garden Pavilion, Heritage Summer House, Contemporary Retreat, Family Summer House (Summer Houses); Executive Office, Compact Office, Professional Studio, Garden Workspace, Executive Plus, Signature Office (Garden Offices).
+- `products/utility-sheds.html`, `garden-rooms.html`, `summer-houses.html`, `garden-offices.html` — each gained a breadcrumb, a "Product Ranges" section linking to its 6 individual product pages, a visual-only "Compare the Range" table, a testimonials section, and an FAQ section.
+- `css/components/product-page.css` — breadcrumb, product gallery (lead image + thumbnails with a lightbox-*placeholder* zoom icon), size/option/colour cards, specification table, native `<details>`/`<summary>` FAQ styling, and the comparison table preview.
+- `js/modules/productGallery.js` — clicking a gallery thumbnail swaps it into the lead image (real, working behaviour); the "expand" icon hints at a future full-screen lightbox but doesn't open one yet, matching the brief's explicit "Image Lightbox placeholder" wording.
+- 4 new verified, licence-checked Unsplash photographs (timber interiors and construction-detail close-ups) added to the shared image pool used across product galleries; the pool is deliberately reused and rotated across products rather than sourcing ~100 unique images for a demonstration catalogue.
+
+**Acceptance Criteria:**
+- All 30 pages (homepage, 5 catalogue/hub pages, 24 product pages) checked programmatically: zero horizontal overflow, zero console errors, zero duplicate element IDs, and all 33 unique internal link targets resolve to HTTP 200.
+- Gallery thumbnail-swap and FAQ accordion both verified to actually work (not just visually) via headless browser interaction.
+- A grammar bug in the shared template (doubled article — "About the The Studio" — affecting the 6 "The ___"-named Garden Rooms products) was caught during review, fixed once in `scripts/product-template.js`, and corrected across all 24 pages by re-running the generator — demonstrating the exact maintainability benefit this architecture is for.
+- No individual product introduces ecommerce, accounts, or functional forms; every enquiry path leads to the existing placeholder contact section.
+
+**Notes:**
+- Marketing copy uses category-level shared content (lifestyle framing, construction details, FAQs, option lists) combined with per-product specifics (name, tagline, overview, gallery selection) rather than 24 fully bespoke essays — appropriate and disclosed for a demonstration catalogue whose purpose is to showcase the architecture, per the brief.
+- Testimonials on both category and product-adjacent pages remain explicitly illustrative example copy, consistent with prior releases.
+
 ## [0.5.0] — 2026-07-03 — Product Catalogue Framework
 
 **Objective:** Establish the reusable architecture for browsing the Hereford Patio & Sheds range — a Products landing page and four premium category pages — focused on browsing experience rather than individual product specifications.

@@ -93,7 +93,9 @@ shedprojectwebsite/
 ├── js/                     Vanilla JavaScript modules
 ├── pages/                  Secondary HTML pages beyond the homepage
 ├── products/                Shed product catalogue content/pages
+│   └── <category>/           One subfolder per category, containing its generated product pages
 ├── quote-builder/           The quote builder tool
+├── scripts/                 Author-time tooling (not part of the served site — see below)
 └── docs/                   Project documentation
     └── MASTER_DEVELOPMENT_STANDARD.md   This document
 ```
@@ -105,6 +107,7 @@ Rules for repository structure:
 - New standalone pages go under `pages/`; the homepage (`index.html`) stays at the repository root, since that is what GitHub Pages serves by default.
 - Product content lives under `products/`; the quote builder is self-contained under `quote-builder/`.
 - Documentation lives under `docs/`, except for the four root-level files (`README.md`, `CLAUDE.md`, `CHANGELOG.md`, and this standard's parent folder), which must remain discoverable at the repository root.
+- `scripts/` holds author-time-only Node tooling (currently the product page generator — see Section 8) used to produce the static files under `products/<category>/`. Nothing under `scripts/` is served to visitors or required to run the site; it is a maintenance convenience, not a build step (see Section 5).
 - No new top-level folders should be introduced without updating this document.
 
 ## 5. Technology Stack
@@ -122,6 +125,8 @@ Rules for repository structure:
 - Server-side languages/runtimes (PHP, Node backend, etc.) — the site is static
 
 Any exception must be proposed and approved explicitly, with the rationale and impact recorded in `CHANGELOG.md` and this document.
+
+**Approved exception — author-time generator tooling (v0.6.0):** `scripts/generate-products.js` is a zero-dependency Node script (standard library only — no `package.json`, no npm packages) that renders `products/<category>/<slug>.html` from `scripts/products-data.js`. It runs only when a maintainer chooses to add or edit a product; it is never invoked to serve, build, or deploy the site. The output is committed as plain static HTML, so GitHub Pages and Live Server continue to serve the site exactly as before — Node is a development convenience, not a runtime or deployment dependency.
 
 ## 6. Design Principles
 

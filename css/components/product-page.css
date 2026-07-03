@@ -1,0 +1,270 @@
+/*
+  Individual product page components: breadcrumb, image gallery with a
+  lightbox-placeholder affordance, size/option/colour cards, the
+  specification table, FAQ disclosures, and the comparison table preview.
+  Not used on the homepage or category landing pages (except breadcrumb
+  and comparison, which category pages also use).
+*/
+
+.breadcrumb {
+  padding-block: var(--space-4);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin-left: var(--space-2);
+  color: var(--color-border);
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  color: var(--color-primary);
+}
+
+.breadcrumb li[aria-current="page"] {
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Product gallery: a lead image plus a row of thumbnails. The expand icon
+   is a visual affordance only — see js/modules/productGallery.js for the
+   (also intentionally minimal) lightbox-placeholder behaviour. */
+.product-gallery-lead {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-4);
+}
+
+.product-gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .product-gallery-thumbs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product-gallery-thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.product-gallery-thumb .gallery-expand-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 42, 29, 0.35);
+  color: var(--color-text-inverse);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.product-gallery-thumb .gallery-expand-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.product-gallery-thumb:hover .gallery-expand-icon,
+.product-gallery-thumb:focus-visible .gallery-expand-icon {
+  opacity: 1;
+}
+
+/* Size / option cards: used for Available Sizes, Roof Options, Door
+   Options, Window Options, and Optional Extras. Deliberately plain,
+   informational cards — not selectable/interactive, since there is no
+   configurator behind them yet. */
+.option-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+.option-card {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.option-card .option-name {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-dark);
+}
+
+.option-card .option-detail {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Colour cards: a small swatch plus a name — no photography needed. */
+.colour-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  justify-content: center;
+}
+
+.colour-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.colour-swatch {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.colour-card span {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Specification table */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.spec-table th,
+.spec-table td {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.spec-table th {
+  width: 40%;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-dark);
+  background: var(--color-surface-alt);
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* FAQ: native <details>/<summary> — semantic, keyboard-operable, and
+   needs no JavaScript. */
+.faq-list {
+  max-width: 44rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  padding: var(--space-4) var(--space-5);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-dark);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: var(--text-xl);
+  color: var(--color-secondary-dark);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+/* Comparison table: visual-only preview, no interactive select-to-compare
+   behaviour yet. */
+.comparison-table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.comparison-table thead th {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+  background: var(--color-surface-alt);
+}
+
+.comparison-table tbody th {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.comparison-note {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+}

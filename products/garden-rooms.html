@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="../css/components/footer.css" />
   <link rel="stylesheet" href="../css/components/sections.css" />
   <link rel="stylesheet" href="../css/components/catalogue.css" />
+  <link rel="stylesheet" href="../css/components/product-page.css" />
   <link rel="stylesheet" href="../css/animations.css" />
 
   <noscript>
@@ -125,6 +126,14 @@
   </header>
 
   <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../index.html#top">Home</a></li>
+        <li><a href="index.html">Products</a></li>
+        <li aria-current="page">Garden Rooms</li>
+      </ol>
+    </nav>
+
     <!-- Hero -->
     <section class="hero fade-in-on-scroll" id="top">
       <div class="container hero-grid">
@@ -257,6 +266,67 @@
       </div>
     </section>
 
+    <!-- Product Ranges -->
+    <section class="section" id="range" aria-labelledby="range-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">The Range</p>
+          <h2 id="range-heading">Six Garden Rooms, One Standard of Craftsmanship</h2>
+          <p class="lead">Every model below is fully insulated and built to the same standard — the difference is in the style and layout.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1724931282671-2d3bcd6de8f2?auto=format&fit=crop&w=800&q=80" alt="The Studio garden room" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>The Studio</h3>
+            <p>A flexible space for work, rest or play.</p>
+            <a href="garden-rooms/the-studio.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1697807650304-907257330a3e?auto=format&fit=crop&w=800&q=80" alt="The Retreat garden room" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>The Retreat</h3>
+            <p>Your own quiet corner of the garden.</p>
+            <a href="garden-rooms/the-retreat.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1723810742992-0e84241abcf5?auto=format&fit=crop&w=800&q=80" alt="The Cedar garden room" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>The Cedar</h3>
+            <p>Warm, natural tones for relaxed living.</p>
+            <a href="garden-rooms/the-cedar.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1782226829785-0a7f9568c5ac?auto=format&fit=crop&w=800&q=80" alt="The Oak garden room" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>The Oak</h3>
+            <p>Solid, timeless design built to last.</p>
+            <a href="garden-rooms/the-oak.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1533391120950-2d65c72e5969?auto=format&fit=crop&w=800&q=80" alt="The Contemporary garden room" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>The Contemporary</h3>
+            <p>Sharp lines and full-height glazing.</p>
+            <a href="garden-rooms/the-contemporary.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1713421892519-d8fc52ecc626?auto=format&fit=crop&w=800&q=80" alt="The Pavilion garden room" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>The Pavilion</h3>
+            <p>An open, airy space for entertaining.</p>
+            <a href="garden-rooms/the-pavilion.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Gallery Preview -->
     <section class="section" id="gallery" aria-labelledby="gallery-heading">
       <div class="container">
@@ -328,6 +398,112 @@
         </div>
         <div class="flex-center" style="margin-top: var(--space-7);">
           <a href="#" class="btn btn-outline">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare -->
+    <section class="section" aria-labelledby="compare-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Compare</p>
+          <h2 id="compare-heading">Compare the Range</h2>
+          <p class="lead">A visual preview — full side-by-side comparison is coming in a future release.</p>
+        </div>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">The Studio</th>
+                <th scope="col">The Oak</th>
+                <th scope="col">The Contemporary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Largest Size</th><td>5.0m x 4.0m</td><td>5.0m x 4.0m</td><td>5.0m x 4.0m</td></tr>
+              <tr><th scope="row">Glazing</th><td>Fixed Windows</td><td>Fixed Windows</td><td>Full-Height Glazing</td></tr>
+              <tr><th scope="row">Best For</th><td>Flexible everyday use</td><td>Classic, timeless style</td><td>Modern architecture fans</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comparison-note">Shown for illustration — every model in the range can be compared and configured with our team.</p>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Testimonials</p>
+          <h2 id="testimonials-heading">What Our Customers Say</h2>
+          <p class="lead">Illustrative example feedback — real customer stories will replace this in a future release.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5</span>
+            <p>&ldquo;We use it as a home gym and a quiet space away from the house. Warm all winter, exactly as promised.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Rachel P.</p>
+                <p class="author-role">Hereford</p>
+              </div>
+            </div>
+          </article>
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5</span>
+            <p>&ldquo;Our garden room has genuinely changed how we use the house — it doesn't feel like an outbuilding at all.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Tom &amp; Alice F.</p>
+                <p class="author-role">Ledbury</p>
+              </div>
+            </div>
+          </article>
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5</span>
+            <p>&ldquo;The finish is exceptional. Friends assume it cost twice what it did.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Michael D.</p>
+                <p class="author-role">Ross-on-Wye</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Frequently Asked Questions</p>
+          <h2 id="faq-heading">Common Questions</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Can I use it all year round?</summary>
+            <p>Yes — every garden room is fully insulated as standard, so it stays comfortable in winter and cool in summer.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need planning permission?</summary>
+            <p>Most garden rooms fall under permitted development, though rules vary by property and location — we'll help you check before you commit.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can it be used as a home office?</summary>
+            <p>Absolutely — many customers use their garden room as a dedicated workspace, with electrics and data connections available as an optional extra.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long does it take to build?</summary>
+            <p>Typically one to two weeks from groundworks to handover, depending on size and specification.</p>
+          </details>
         </div>
       </div>
     </section>

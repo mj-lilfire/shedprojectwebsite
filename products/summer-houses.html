@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="../css/components/footer.css" />
   <link rel="stylesheet" href="../css/components/sections.css" />
   <link rel="stylesheet" href="../css/components/catalogue.css" />
+  <link rel="stylesheet" href="../css/components/product-page.css" />
   <link rel="stylesheet" href="../css/animations.css" />
 
   <noscript>
@@ -125,6 +126,14 @@
   </header>
 
   <main id="main">
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../index.html#top">Home</a></li>
+        <li><a href="index.html">Products</a></li>
+        <li aria-current="page">Summer Houses</li>
+      </ol>
+    </nav>
+
     <!-- Hero -->
     <section class="hero fade-in-on-scroll" id="top">
       <div class="container hero-grid">
@@ -257,6 +266,67 @@
       </div>
     </section>
 
+    <!-- Product Ranges -->
+    <section class="section" id="range" aria-labelledby="range-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">The Range</p>
+          <h2 id="range-heading">Six Summer Houses for Every Garden</h2>
+          <p class="lead">Every model below is built to the same standard — the difference is in the style and setting.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1776893471287-5a88c2e0743c?auto=format&fit=crop&w=800&q=80" alt="Classic Summer House" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>Classic Summer House</h3>
+            <p>Timeless style for long summer days.</p>
+            <a href="summer-houses/classic-summer-house.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80" alt="Corner Retreat summer house" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>Corner Retreat</h3>
+            <p>Designed to make the most of a corner plot.</p>
+            <a href="summer-houses/corner-retreat.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1586191454576-c94c588a8617?auto=format&fit=crop&w=800&q=80" alt="Garden Pavilion summer house" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>Garden Pavilion</h3>
+            <p>An elegant garden feature you'll live in.</p>
+            <a href="summer-houses/garden-pavilion.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1782226829785-0a7f9568c5ac?auto=format&fit=crop&w=800&q=80" alt="Heritage Summer House" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>Heritage Summer House</h3>
+            <p>Traditional charm, built to modern standards.</p>
+            <a href="summer-houses/heritage-summer-house.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1533391120950-2d65c72e5969?auto=format&fit=crop&w=800&q=80" alt="Contemporary Retreat summer house" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>Contemporary Retreat</h3>
+            <p>A modern take on the classic summer house.</p>
+            <a href="summer-houses/contemporary-retreat.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+          <article class="card card-product fade-in-on-scroll">
+            <div class="card-media">
+              <img class="photo-cover" src="https://images.unsplash.com/photo-1713421892519-d8fc52ecc626?auto=format&fit=crop&w=800&q=80" alt="Family Summer House" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>Family Summer House</h3>
+            <p>Room enough for the whole family.</p>
+            <a href="summer-houses/family-summer-house.html" class="btn btn-outline btn-sm">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Gallery Preview -->
     <section class="section" id="gallery" aria-labelledby="gallery-heading">
       <div class="container">
@@ -328,6 +398,112 @@
         </div>
         <div class="flex-center" style="margin-top: var(--space-7);">
           <a href="#" class="btn btn-outline">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare -->
+    <section class="section" aria-labelledby="compare-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Compare</p>
+          <h2 id="compare-heading">Compare the Range</h2>
+          <p class="lead">A visual preview — full side-by-side comparison is coming in a future release.</p>
+        </div>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">Classic Summer House</th>
+                <th scope="col">Corner Retreat</th>
+                <th scope="col">Family Summer House</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Largest Size</th><td>4.5m x 3.5m</td><td>4.5m x 3.5m</td><td>4.5m x 3.5m</td></tr>
+              <tr><th scope="row">Roof Options</th><td>Apex, Pent, Veranda</td><td>Apex, Pent, Veranda</td><td>Apex, Pent, Veranda</td></tr>
+              <tr><th scope="row">Best For</th><td>Classic gardens</td><td>Corner plots</td><td>Family use</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comparison-note">Shown for illustration — every model in the range can be compared and configured with our team.</p>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Testimonials</p>
+          <h2 id="testimonials-heading">What Our Customers Say</h2>
+          <p class="lead">Illustrative example feedback — real customer stories will replace this in a future release.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5</span>
+            <p>&ldquo;We practically live in it from May to September. Best decision we made for the garden.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Sarah W.</p>
+                <p class="author-role">Hereford</p>
+              </div>
+            </div>
+          </article>
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5</span>
+            <p>&ldquo;The kids have claimed it as their own, but we still manage to sneak an evening out there.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Dan &amp; Louise M.</p>
+                <p class="author-role">Leominster</p>
+              </div>
+            </div>
+          </article>
+          <article class="card card-testimonial fade-in-on-scroll">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <span class="visually-hidden">Rated 5 out of 5</span>
+            <p>&ldquo;Beautifully made and it catches the evening light perfectly.&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="author-name">Helen R.</p>
+                <p class="author-role">Ledbury</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header center fade-in-on-scroll">
+          <p class="eyebrow">Frequently Asked Questions</p>
+          <h2 id="faq-heading">Common Questions</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Will it get too hot in summer?</summary>
+            <p>Our summer houses are designed with ventilation and glazing options to keep the space comfortable, even on warmer days.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I add insulation later?</summary>
+            <p>Yes — insulation can be added as an optional extra at the time of order, or retrofitted afterwards.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you install throughout the year?</summary>
+            <p>Yes, we install year-round, though good weather makes for the smoothest installation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What maintenance is required?</summary>
+            <p>An annual check of the timber treatment and guttering will keep your summer house looking its best for years to come.</p>
+          </details>
         </div>
       </div>
     </section>
