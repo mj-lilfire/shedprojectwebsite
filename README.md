@@ -6,7 +6,7 @@ The official website for the Shed Project, including a customer-facing quote bui
 
 All development in this repository is governed by **[docs/MASTER_DEVELOPMENT_STANDARD.md](docs/MASTER_DEVELOPMENT_STANDARD.md)**. It defines the project's architecture, workflow, coding standards, documentation requirements, governance model, and release process. Read it before making changes.
 
-For instructions specific to working with Claude Code in this repository, see [CLAUDE.md](CLAUDE.md). For the version history, see [CHANGELOG.md](CHANGELOG.md).
+For instructions specific to working with Claude Code in this repository, see [CLAUDE.md](CLAUDE.md). For the version history, see [CHANGELOG.md](CHANGELOG.md). For how to clone, run, and deploy the site, see [docs/ACCESS_AND_DEPLOYMENT.md](docs/ACCESS_AND_DEPLOYMENT.md).
 
 ## Technology Stack
 
@@ -40,7 +40,8 @@ shedprojectwebsite/
 ├── products/                        Shed product catalogue content
 ├── quote-builder/                   The quote builder tool
 └── docs/                           Project documentation
-    └── MASTER_DEVELOPMENT_STANDARD.md
+    ├── MASTER_DEVELOPMENT_STANDARD.md
+    └── ACCESS_AND_DEPLOYMENT.md      Clone, local dev, git workflow, GitHub Pages, troubleshooting
 ```
 
 See the Master Development Standard, Section 4, for the full explanation of each folder's purpose.
@@ -56,7 +57,11 @@ The homepage design system (colour palette, typography, spacing, radius, shadows
 3. Serve `index.html` with Live Server (or an equivalent static file server).
 4. Test changes in the browser before committing.
 
-This project has no build step — it is served as static files.
+This project has no build step — it is served as static files. For full step-by-step instructions (cloning, Live Server, the live GitHub Pages URL, the git release workflow, and troubleshooting), see [docs/ACCESS_AND_DEPLOYMENT.md](docs/ACCESS_AND_DEPLOYMENT.md).
+
+## Live Website
+
+The live site is published via GitHub Pages at **[mj-lilfire.github.io/shedprojectwebsite](https://mj-lilfire.github.io/shedprojectwebsite/)**, updated automatically on every push to `main`.
 
 ## Contributing
 
@@ -64,4 +69,4 @@ Every change should be scoped as a release with an **Objective, Governance, Scop
 
 ## Current Version
 
-**v0.3.0** — Website Foundation & Design System. See [CHANGELOG.md](CHANGELOG.md) for full release history.
+**v0.4.0** — Access & Deployment Documentation. See [CHANGELOG.md](CHANGELOG.md) for full release history.

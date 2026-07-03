@@ -4,6 +4,25 @@ All notable changes to this project are documented in this file. Every entry fol
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.4.0] — 2026-07-03 — Access & Deployment Documentation
+
+**Objective:** Document how to access, develop, test, and publish the Shed Project Website, so a new developer can clone, run, and deploy the site with no prior knowledge of the setup.
+
+**Governance:** Documentation-only release. No website layout, pages, business content, UI components, navigation, styling, or JavaScript functionality were modified.
+
+**Scope:** Add `docs/ACCESS_AND_DEPLOYMENT.md`; update `README.md` and `CLAUDE.md` to reference it.
+
+**Deliverables:**
+- `docs/ACCESS_AND_DEPLOYMENT.md` — local development setup, the live GitHub Pages URL, the standard development workflow, the git release command sequence (with an explanation of each command), GitHub Pages configuration, troubleshooting, and a placeholder section for future GitHub Actions automation.
+- `README.md` — added a "Live Website" section and links to the new document.
+- `CLAUDE.md` — added a reference to the new document and a documentation-discipline entry for it.
+
+**Acceptance Criteria:**
+- `docs/ACCESS_AND_DEPLOYMENT.md` exists and covers local development, live website access, git workflow, deployment process, troubleshooting, and future deployment automation.
+- `README.md` and `CLAUDE.md` link to the new document.
+- No website functionality or visual design was modified.
+- Documentation is suitable for a new developer joining the project with no prior knowledge.
+
 ## [0.3.0] — 2026-07-03 — Website Foundation & Design System
 
 **Objective:** Establish the complete visual and technical foundation for the Shed Project Website — global design system, reusable components, responsive layout, navigation, footer, and homepage framework — as the base for all future pages and features.

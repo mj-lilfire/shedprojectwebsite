@@ -6,6 +6,8 @@ Guidance for Claude Code when working in this repository.
 
 This repository is governed by **[docs/MASTER_DEVELOPMENT_STANDARD.md](docs/MASTER_DEVELOPMENT_STANDARD.md)**. Read it before making any change — it is the authoritative reference for architecture, workflow, coding standards, documentation requirements, governance, and release process. This file summarises the parts most relevant to day-to-day work; the Master Development Standard takes precedence if anything here is ambiguous or out of date.
 
+For the practical, step-by-step version of cloning, running Live Server, the git release commands, and GitHub Pages — including the live site URL and troubleshooting — see **[docs/ACCESS_AND_DEPLOYMENT.md](docs/ACCESS_AND_DEPLOYMENT.md)**.
+
 ## Technology Stack
 
 HTML5, CSS3, and vanilla JavaScript only. Do not introduce frameworks, CSS libraries, or build tooling (Bootstrap, Tailwind, React, Webpack, Vite, etc.) unless the user has explicitly approved an exception — see Master Development Standard, Section 5.
@@ -44,6 +46,7 @@ Every substantive change should update, as relevant:
 - `CLAUDE.md` — this file, if working conventions change
 - `CHANGELOG.md` — a new versioned entry (Version, Objective, Governance, Scope, Deliverables, Acceptance Criteria)
 - `docs/MASTER_DEVELOPMENT_STANDARD.md` — if the change affects a defined standard
+- `docs/ACCESS_AND_DEPLOYMENT.md` — if the change affects local dev setup, the git/release commands, or the GitHub Pages deployment process
 
 Do not remove existing documentation; update it in place, and keep all documents consistent with one another.
 
