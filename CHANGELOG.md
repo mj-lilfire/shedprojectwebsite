@@ -4,6 +4,30 @@ All notable changes to this project are documented in this file. Every entry fol
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.4.1] — 2026-07-03 — Global Announcement Bar & Header Enhancement
+
+**Objective:** Introduce a premium, reusable global announcement bar above the main navigation that rotates through short promotional messages, to improve customer confidence and give the business an easy way to surface key selling points (and, later, promotions) without touching the rest of the site.
+
+**Governance:** Announcement bar release only. No new pages, no homepage layout changes, no changes to existing CSS variables/tokens, no backend, no Quote Builder or ecommerce functionality, and no changes to existing navigation links. The bar sits in normal document flow above the existing sticky header — it was not made sticky itself, so no other component's positioning changed.
+
+**Scope:** A new, globally reusable announcement bar component: rotating text with a tick icon, fade-only transitions, pause-on-hover, and a single configurable message list.
+
+**Deliverables:**
+- `components/announcement-bar.html` — canonical source markup (mirrored inline in `index.html`, same convention as the nav/footer partials).
+- `css/components/announcement-bar.css` — new component stylesheet; ~44px bar using the existing `--color-primary` background and `--color-text-inverse` text (no new tokens added), with a `prefers-reduced-motion` override.
+- `js/modules/announcementBar.js` — new module owning rotation. The message list is a single `ANNOUNCEMENT_MESSAGES` array at the top of the file with an inline comment explaining how to add, remove, or reorder messages; rotation is `setInterval`-driven (~5.5s), fades via a CSS class rather than a JS animation loop, pauses on `mouseenter`/resumes on `mouseleave`, and is skipped entirely (static first message only) under `prefers-reduced-motion`.
+- `js/main.js` — now also calls `initAnnouncementBar()`.
+- Initial message set: "Free Local Delivery Within 30 Miles of Hereford", "Free Design Consultation", "Family Run Business", "Professional Delivery & Installation".
+
+**Acceptance Criteria:**
+- Bar rotates automatically through all four messages with a fade-only transition and no layout shift; verified in a headless browser (message changes confirmed at each ~5.5s interval).
+- Hovering the bar pauses rotation; moving the pointer away resumes it — both verified directly (not just visually).
+- Responsive at 320–1440px: the longest message stays on one line from 375px up; at 320px it wraps to two lines rather than clipping or overflowing (bar grows from ~44px to ~56px to accommodate this) — no horizontal overflow at any width tested.
+- Accessible: semantic `role="region"` with `aria-label`, tick icon is `aria-hidden`, sufficient colour contrast (warm white on deep forest green, the same combination already used and reviewed for the CTA banner), no interactive elements so no keyboard traps. `aria-live` was deliberately *not* added — an auto-rotating live region would interrupt screen reader users every ~5.5 seconds, which is worse than reading whichever message happens to be present.
+- No console errors and no regressions to any other component, verified across the same breakpoint matrix used in prior releases.
+
+**Notes:** The message list is intentionally plain strings in a JS array (not HTML) so future edits (e.g. "Summer Sale Now On", "Finance Available") are a one-line change with no markup risk — see the comment block at the top of `js/modules/announcementBar.js`.
+
 ## [0.4.0] — 2026-07-03 — Premium Homepage Experience
 
 **Objective:** Elevate the Hereford Patio & Sheds homepage into a premium, benchmark-quality landing page — refined hero messaging, a "Why Choose Us" section, a four-step customer journey, and responsive/performance polish — establishing the standard for all future pages.

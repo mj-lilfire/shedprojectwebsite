@@ -1,0 +1,53 @@
+/*
+  Global announcement bar: a slim, full-width strip above the main
+  navigation that rotates through a short list of promotional messages.
+  Sits in normal document flow (not sticky) — it scrolls away with the
+  page, while the sticky header below it takes over the top of the
+  viewport, which is the standard pattern for this kind of promo bar.
+*/
+
+.announcement-bar {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.announcement-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding-block: var(--space-2);
+  text-align: center;
+}
+
+.announcement-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.announcement-text {
+  margin: 0;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
+  transition: opacity 400ms var(--ease-standard);
+  opacity: 1;
+}
+
+.announcement-text.is-fading {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .announcement-text {
+    font-size: var(--text-sm);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-text {
+    transition: none;
+  }
+}

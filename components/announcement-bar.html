@@ -1,0 +1,27 @@
+<!--
+  Reusable global announcement bar.
+
+  Canonical source for the announcement bar markup — see the note in
+  components/navigation.html for why this is copied rather than included
+  via a build step. This block sits directly before the <header> on every
+  page, in normal document flow (not sticky), so it scrolls away and the
+  sticky header takes over the top of the viewport.
+
+  The message shown below is a static no-JS fallback and starting state;
+  js/modules/announcementBar.js takes over rotation through the full
+  message list once it runs. To change the rotating messages, edit the
+  ANNOUNCEMENT_MESSAGES array in that file, not this markup.
+
+  No aria-live attribute is used deliberately: an auto-rotating aria-live
+  region would interrupt screen reader users every few seconds, which is
+  worse than just reading whichever message is present. aria-label gives
+  the region a clear accessible name instead.
+-->
+<div class="announcement-bar" role="region" aria-label="Promotions and announcements" data-announcement-bar>
+  <div class="container announcement-bar-inner">
+    <svg class="announcement-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <p class="announcement-text" data-announcement-text>Free Local Delivery Within 30 Miles of Hereford</p>
+  </div>
+</div>

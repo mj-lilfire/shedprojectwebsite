@@ -25,17 +25,17 @@ shedprojectwebsite/
 ├── CLAUDE.md                       Instructions for Claude Code sessions
 ├── CHANGELOG.md                    Versioned history of every release
 ├── assets/                         Static media (fonts, icons, images)
-├── components/                      Canonical reusable HTML partials (navigation, footer)
+├── components/                      Canonical reusable HTML partials (announcement bar, navigation, footer)
 ├── css/
 │   ├── variables.css                 Design tokens (colour, type, spacing, radius, shadow, breakpoints)
 │   ├── base.css                      Reset and base element styles
 │   ├── typography.css                Type scale
 │   ├── layout.css                    Containers, grid/flex utilities, image placeholders
 │   ├── animations.css                Scroll-reveal animation
-│   └── components/                  buttons.css, cards.css, navigation.css, footer.css, sections.css
+│   └── components/                  announcement-bar.css, buttons.css, cards.css, navigation.css, footer.css, sections.css
 ├── js/
 │   ├── main.js                       Entry point
-│   └── modules/                     navigation.js, animations.js
+│   └── modules/                     navigation.js, animations.js, announcementBar.js
 ├── pages/                          Secondary HTML pages
 ├── products/                        Shed product catalogue content
 ├── quote-builder/                   The quote builder tool
@@ -48,7 +48,15 @@ See the Master Development Standard, Section 4, for the full explanation of each
 
 ## Design System
 
-The homepage design system (colour palette, typography, spacing, radius, shadows, transitions, breakpoints) is defined once as CSS custom properties in `css/variables.css` and consumed throughout `css/` — see Master Development Standard, Section 7. Reusable components (navigation, footer, buttons, cards, hero/CTA sections) live under `css/components/`; the navigation and footer markup is additionally kept as canonical source in `components/` for reuse on future pages.
+The homepage design system (colour palette, typography, spacing, radius, shadows, transitions, breakpoints) is defined once as CSS custom properties in `css/variables.css` and consumed throughout `css/` — see Master Development Standard, Section 7. Reusable components (announcement bar, navigation, footer, buttons, cards, hero/CTA sections) live under `css/components/`; the announcement bar, navigation, and footer markup is additionally kept as canonical source in `components/` for reuse on future pages.
+
+### Announcement Bar
+
+A slim, full-width bar above the main navigation that rotates through short promotional messages (e.g. "Free Local Delivery Within 30 Miles of Hereford"). It's a genuinely global component — the same markup (`components/announcement-bar.html`) belongs on every page, not just the homepage.
+
+- **To change the messages:** edit the `ANNOUNCEMENT_MESSAGES` array at the top of `js/modules/announcementBar.js`. It's a plain list of strings — no HTML, no build step, no other file to touch. The comment above the array explains the format.
+- **Behaviour:** fades between messages roughly every 5.5 seconds, pauses while hovered, and skips rotation entirely (showing only the first message) if the visitor's system has `prefers-reduced-motion` enabled.
+- **Styling:** uses the existing `--color-primary` / `--color-text-inverse` tokens — no new design tokens were introduced for this component.
 
 ## Local Development
 
@@ -69,4 +77,4 @@ Every change should be scoped as a release with an **Objective, Governance, Scop
 
 ## Current Version
 
-**v0.4.0** — Premium Homepage Experience. See [CHANGELOG.md](CHANGELOG.md) for the full release history.
+**v0.4.1** — Global Announcement Bar & Header Enhancement. See [CHANGELOG.md](CHANGELOG.md) for the full release history.

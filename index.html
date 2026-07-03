@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components/buttons.css" />
   <link rel="stylesheet" href="css/components/cards.css" />
+  <link rel="stylesheet" href="css/components/announcement-bar.css" />
   <link rel="stylesheet" href="css/components/navigation.css" />
   <link rel="stylesheet" href="css/components/footer.css" />
   <link rel="stylesheet" href="css/components/sections.css" />
@@ -55,6 +56,16 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Reusable announcement bar — canonical source: components/announcement-bar.html -->
+  <div class="announcement-bar" role="region" aria-label="Promotions and announcements" data-announcement-bar>
+    <div class="container announcement-bar-inner">
+      <svg class="announcement-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <p class="announcement-text" data-announcement-text>Free Local Delivery Within 30 Miles of Hereford</p>
+    </div>
+  </div>
 
   <!-- Reusable navigation — canonical source: components/navigation.html -->
   <header class="site-header" data-site-header>
