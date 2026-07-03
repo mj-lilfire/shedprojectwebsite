@@ -70,3 +70,4 @@ Every change should be scoped as a release with an **Objective, Governance, Scop
 ## Current Version
 
 **v0.3.2** — Homepage Visual Identity, Branding & Content Refresh. See [CHANGELOG.md](CHANGELOG.md) for the full release history, including a note on this release's out-of-sequence version number.
+
