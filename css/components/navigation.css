@@ -4,8 +4,8 @@
   position: sticky;
   top: 0;
   z-index: var(--z-nav);
-  background: rgba(250, 247, 242, 0.9);
-  backdrop-filter: blur(8px);
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
   transition:
     box-shadow var(--transition-base),
@@ -14,7 +14,7 @@
 }
 
 .site-header.is-scrolled {
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   border-color: var(--color-border);
   background: rgba(250, 247, 242, 0.98);
 }
@@ -103,9 +103,11 @@
 }
 
 .nav-menu a {
+  display: inline-block;
   font-weight: var(--font-weight-medium);
-  padding-block: var(--space-2);
+  padding: var(--space-3) 0;
   position: relative;
+  transition: color var(--transition-fast);
 }
 
 .nav-menu a:hover,

@@ -4,9 +4,29 @@ All notable changes to this project are documented in this file. Every entry fol
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
-## [0.3.2] — 2026-07-03 — Homepage Visual Identity, Branding & Content Refresh
+## [0.4.0] — 2026-07-03 — Premium Homepage Experience
 
-> **Versioning note:** this release was explicitly requested as `v0.3.2`, which is numerically behind the already-shipped `v0.4.0` (Access & Deployment Documentation). Per the user's explicit instruction, the version number below follows the brief exactly rather than being renumbered to `v0.4.1`/`v0.5.0` to preserve strict ascending order. This is a deliberate, documented exception to normal semantic-versioning order — `v0.4.0` remains the most recently *numbered* release, but `v0.3.2` is chronologically later and supersedes it on the live site.
+**Objective:** Elevate the Hereford Patio & Sheds homepage into a premium, benchmark-quality landing page — refined hero messaging, a "Why Choose Us" section, a four-step customer journey, and responsive/performance polish — establishing the standard for all future pages.
+
+**Governance:** Homepage content and refinement release only. No product detail pages, Quote Builder functionality, ecommerce, customer accounts, search, finance, blog, dedicated gallery page, or contact form backend were introduced — all new CTAs use placeholder anchors/links. The v0.3.0 design system and v0.3.2 branding were extended, not replaced.
+
+**Scope:** Refresh hero headline/copy/buttons; refresh Trust Indicators copy and add a new icon; add a new "Why Choose Us" split section with a new photograph; add a new four-step "Customer Journey" section; rename the collection heading; refresh the closing CTA copy; add `srcset`/`sizes` responsive images across every photograph on the page; light navigation polish (spacing, hover, sticky-scroll shadow).
+
+**Deliverables:**
+- `index.html`, `components/footer.html` — new hero headline ("Beautiful Outdoor Buildings Built Around Your Lifestyle") and CTAs ("Explore Our Buildings" / "Request a Quote"); refreshed Trust Indicators (Quality Craftsmanship, Made to Measure, Professional Installation, Family Business — one new hand-authored SVG icon); new "Why Choose Us" section (`#why-choose-us`, reusing the reversed `.split-content` pattern with a new verified photograph); new "Customer Journey" section (`#journey`, four numbered steps reusing `.card-feature` plus a new `.step-number` treatment); Collection section retitled "Explore Our Collection"; CTA banner retitled "Ready to Transform Your Garden?" with a "Get Your Free Quote" button; footer's Company column links to the new Why Choose Us section.
+- One new verified, licence-checked Unsplash photograph (craftsmanship/build-in-progress) for the Why Choose Us section.
+- `css/components/navigation.css` — larger mobile tap targets, a slightly stronger scrolled-state shadow/blur, smoother hover colour transitions.
+- `css/components/cards.css` — `.step-number` styling for the Customer Journey cards.
+- Every photograph on the homepage (14 in total) now ships a `srcset`/`sizes` pair sized to its actual layout context, in addition to the `loading="lazy"`/`loading="eager"` split already in place from v0.3.2.
+
+**Acceptance Criteria:**
+- Homepage includes professional branding, premium hero, trust indicators, featured collections, Why Choose Us, customer journey, testimonials, and a strong closing CTA, per the brief.
+- No regressions: re-verified in a headless browser at 375/390/768/900/1024/1440px — no horizontal overflow, no console errors, and all 14 images (including new `srcset` variants) resolve successfully after a full-page scroll.
+- No new pages, functionality, or business-critical integrations were introduced; all new links are placeholder anchors.
+
+**Notes:** This release also corrects a pre-existing documentation bug: the entry below for the documentation release was mislabelled `[0.4.0]` in this file even though it was actually tagged and committed as `v0.3.1`. It's renamed to `[0.3.1]` here to match the real git history (`v0.3.0` → `v0.3.1` → `v0.3.2` → this `v0.4.0`), and the outdated "versioning exception" note that no longer reflects reality has been removed.
+
+## [0.3.2] — 2026-07-03 — Homepage Visual Identity, Branding & Content Refresh
 
 **Objective:** Transform the website foundation into a premium marketing homepage for **Hereford Patio & Sheds**, a family-run outdoor living company specialising in utility sheds, garden rooms, summer houses, and garden offices — replacing all placeholder branding, copy, and imagery.
 
@@ -34,7 +54,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - Testimonials are clearly labelled as illustrative example copy, not real customer quotes, since the business has no real customers yet.
 - All 10 photographs are Unsplash free-tier images (not `plus.unsplash.com` premium/licensed content), usable without attribution under the Unsplash License — but photo URLs are only as durable as Unsplash keeps them live; a future release should consider downloading and self-hosting under `assets/images/` for long-term stability.
 
-## [0.4.0] — 2026-07-03 — Access & Deployment Documentation
+## [0.3.1] — 2026-07-03 — Development & Deployment Documentation
 
 **Objective:** Document how to access, develop, test, and publish the Shed Project Website, so a new developer can clone, run, and deploy the site with no prior knowledge of the setup.
 
