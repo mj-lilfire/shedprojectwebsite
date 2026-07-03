@@ -7,15 +7,20 @@
   added under pages/, copy this block in verbatim rather than re-authoring
   it, so there is only ever one navigation component to maintain.
 
-  Anchor links below (e.g. #why-choose-us) target sections on the homepage.
+  Anchor links below (e.g. #garden-rooms) target sections on the homepage.
   When this component is reused from a page other than index.html, prefix
-  those hrefs with the homepage path (e.g. ../index.html#why-choose-us).
+  those hrefs with the homepage path (e.g. ../index.html#garden-rooms).
 -->
 <header class="site-header" data-site-header>
   <div class="container nav-container">
-    <a href="index.html#top" class="logo" aria-label="Shed Project — Home">
-      <span class="logo-mark" aria-hidden="true"></span>
-      <span class="logo-text">Shed Project</span>
+    <a href="index.html#top" class="logo" aria-label="Hereford Patio & Sheds — Home">
+      <!-- Temporary logo: simple shed outline, swap for a professional mark when available. -->
+      <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M4 15L16 5L28 15" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M7 13V27H25V13" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M13 27V19H19V27" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span class="logo-text">Hereford Patio &amp; Sheds</span>
     </a>
 
     <button
@@ -33,12 +38,15 @@
     <nav id="primary-navigation" class="primary-navigation" aria-label="Primary">
       <ul class="nav-menu">
         <li><a href="index.html#top">Home</a></li>
-        <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
-        <li><a href="index.html#featured-products">Products</a></li>
+        <li><a href="index.html#utility-sheds">Sheds</a></li>
+        <li><a href="index.html#garden-rooms">Garden Rooms</a></li>
+        <li><a href="index.html#summer-houses">Summer Houses</a></li>
+        <li><a href="index.html#garden-offices">Garden Offices</a></li>
         <li><a href="index.html#gallery-preview">Gallery</a></li>
-        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
-      <a href="index.html#cta-banner" class="btn btn-primary nav-cta">Get a Quote</a>
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Get a Quote</a>
     </nav>
   </div>
 </header>

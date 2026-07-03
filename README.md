@@ -1,6 +1,6 @@
 # Shed Project Website
 
-The official website for the Shed Project, including a customer-facing quote builder.
+The official website for **Hereford Patio & Sheds** — a premium outdoor living company building utility sheds, garden rooms, summer houses, and garden offices. (The repository name and internal docs still refer to the "Shed Project Website"; the live brand is Hereford Patio & Sheds.) The site also includes a customer-facing quote builder, planned for a future release.
 
 ## Governing Standard
 
@@ -69,4 +69,4 @@ Every change should be scoped as a release with an **Objective, Governance, Scop
 
 ## Current Version
 
-**v0.4.0** — Access & Deployment Documentation. See [CHANGELOG.md](CHANGELOG.md) for full release history.
+**v0.3.2** — Homepage Visual Identity, Branding & Content Refresh. See [CHANGELOG.md](CHANGELOG.md) for the full release history, including a note on this release's out-of-sequence version number.

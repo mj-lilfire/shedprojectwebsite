@@ -40,8 +40,8 @@
 .logo-mark {
   width: 2rem;
   height: 2rem;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  flex-shrink: 0;
+  color: var(--color-primary);
 }
 
 .nav-toggle {
@@ -118,9 +118,11 @@
 }
 
 /*
-  The full horizontal menu (5 items + CTA) doesn't fit alongside the logo
+  The full horizontal menu (8 items + CTA) doesn't fit alongside the logo
   at tablet widths, so the hamburger persists through the tablet
-  breakpoint and the desktop layout only applies from 1024px up.
+  breakpoint and the desktop layout only applies from 1024px up. At that
+  item count the menu also needs a tighter gap and slightly smaller type
+  than the tablet feature-grid uses elsewhere on the page.
 */
 @media (min-width: 1024px) {
   .nav-toggle {
@@ -137,12 +139,13 @@
     padding: 0;
     border: none;
     background: transparent;
-    gap: var(--space-7);
+    gap: var(--space-5);
   }
 
   .nav-menu {
     flex-direction: row;
-    gap: var(--space-6);
+    gap: var(--space-4);
+    font-size: var(--text-sm);
   }
 
   .nav-menu a::after {

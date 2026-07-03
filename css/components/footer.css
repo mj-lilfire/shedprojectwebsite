@@ -50,6 +50,10 @@
   margin-bottom: var(--space-4);
 }
 
+.footer-column h3.footer-subheading {
+  margin-top: var(--space-5);
+}
+
 .footer-column ul {
   display: flex;
   flex-direction: column;

@@ -4,6 +4,36 @@ All notable changes to this project are documented in this file. Every entry fol
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.3.2] — 2026-07-03 — Homepage Visual Identity, Branding & Content Refresh
+
+> **Versioning note:** this release was explicitly requested as `v0.3.2`, which is numerically behind the already-shipped `v0.4.0` (Access & Deployment Documentation). Per the user's explicit instruction, the version number below follows the brief exactly rather than being renumbered to `v0.4.1`/`v0.5.0` to preserve strict ascending order. This is a deliberate, documented exception to normal semantic-versioning order — `v0.4.0` remains the most recently *numbered* release, but `v0.3.2` is chronologically later and supersedes it on the live site.
+
+**Objective:** Transform the website foundation into a premium marketing homepage for **Hereford Patio & Sheds**, a family-run outdoor living company specialising in utility sheds, garden rooms, summer houses, and garden offices — replacing all placeholder branding, copy, and imagery.
+
+**Governance:** Homepage content, branding, and photography release only. No ecommerce, customer login, Quote Builder functionality, contact form backend, blog functionality, finance, search, or AI assistant were introduced. The v0.3.0 design system (tokens, breakpoints, component CSS) was extended, not replaced or duplicated. No new pages were created — all navigation targets are anchors within the existing homepage.
+
+**Scope:** Replace the temporary brand identity with Hereford Patio & Sheds (logo, name, colours unchanged); redesign the hero as a split copy/photograph layout; add a trust bar, refreshed "About" section, a 4-item collection section (replacing "Featured Products"), real photography throughout, professional marketing copy sitewide, an expanded 8-item navigation, and an expanded footer (Opening Hours placeholder alongside Contact).
+
+**Deliverables:**
+- `index.html`, `components/navigation.html`, `components/footer.html` — full copy and branding refresh; temporary shed-outline SVG logo; 8-item navigation (Home, Sheds, Garden Rooms, Summer Houses, Garden Offices, Gallery, About, Contact) plus a "Get a Quote" button; footer Opening Hours block added alongside Contact.
+- 10 real, licence-verified photographs from Unsplash (free tier) replacing every `image-placeholder` div on the homepage — hero, About, all 4 collection cards, and all 4 gallery-preview cards. Each URL was checked for an HTTP 200 response and visually reviewed before use.
+- Hand-authored inline SVG icons: the logo mark and four trust-bar icons (Quality Materials, Expert Craftsmanship, Made to Suit You, Delivery & Installation) — no icon library dependency.
+- `css/components/sections.css` — new split hero (`.hero-grid`) with a soft gradient seam between copy and photograph, and a `.trust-bar` strip.
+- `css/components/navigation.css` — logo mark resized for an SVG icon; desktop menu gap/type-size tightened to fit 8 items + CTA at the existing 1024px breakpoint with no overflow.
+- `css/components/cards.css`, `css/layout.css` — `.photo-cover` / `.split-media` / `.card-media` updated to host real `<img>` elements (lazy-loaded, sized, `decoding="async"`) in place of placeholder divs; the `.image-placeholder` utility itself is untouched and still available for future placeholder needs.
+
+**Acceptance Criteria:**
+- Homepage reads as a premium outdoor living brand, not a timber merchant; no placeholder marketing copy remains.
+- Branding consistently reads "Hereford Patio & Sheds" in the nav, footer, and page metadata.
+- Hero, trust bar, collection cards, gallery, testimonials, CTA banner, and footer all use real copy and real photography.
+- Verified in a headless browser at 375/390/768/900/1024/1440px: no horizontal overflow, no console errors, all images resolve successfully (confirmed after a full-page scroll to trigger lazy loading).
+- No regressions to the v0.3.0 design system, GitHub Pages compatibility, or Live Server compatibility.
+
+**Notes:**
+- Address, phone number, and opening hours in the footer remain explicit placeholders (as the brief required) pending real business details; `<meta name="robots" content="noindex, nofollow">` is kept for the same reason.
+- Testimonials are clearly labelled as illustrative example copy, not real customer quotes, since the business has no real customers yet.
+- All 10 photographs are Unsplash free-tier images (not `plus.unsplash.com` premium/licensed content), usable without attribution under the Unsplash License — but photo URLs are only as durable as Unsplash keeps them live; a future release should consider downloading and self-hosting under `assets/images/` for long-term stability.
+
 ## [0.4.0] — 2026-07-03 — Access & Deployment Documentation
 
 **Objective:** Document how to access, develop, test, and publish the Shed Project Website, so a new developer can clone, run, and deploy the site with no prior knowledge of the setup.
