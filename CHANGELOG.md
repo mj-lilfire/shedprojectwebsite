@@ -4,6 +4,32 @@ All notable changes to this project are documented in this file. Every entry fol
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.5.0] — 2026-07-03 — Product Catalogue Framework
+
+**Objective:** Establish the reusable architecture for browsing the Hereford Patio & Sheds range — a Products landing page and four premium category pages — focused on browsing experience rather than individual product specifications.
+
+**Governance:** Catalogue framework release only. No individual product specification pages, online purchasing, shopping basket, checkout, customer accounts, Quote Builder functionality, contact form backend, finance, or search were implemented. All "Request a Quote"/"Contact Us" CTAs point to the existing footer contact placeholder (`#contact`); the product filter bar is a visual-only preview with no functional filtering.
+
+**Scope:** A "Products" dropdown in the main navigation (desktop hover/click, mobile accordion); a Products landing page (`products/index.html`); four category pages (`products/utility-sheds.html`, `garden-rooms.html`, `summer-houses.html`, `garden-offices.html`); a reusable feature-icon-list component; a visual-only filter bar; new photography.
+
+**Deliverables:**
+- `components/navigation.html`, `index.html`, and all 5 new pages — nav restructured from 8 flat top-level items down to Home / **Products (dropdown)** / Gallery / About / Contact, freeing up room in the nav and reducing prior overflow risk. The dropdown is a hybrid: CSS `:hover`/`:focus-within` reveals it for pointer/keyboard users with no JS at all, and `js/modules/navigation.js` adds click-to-toggle for touch devices (which have no real hover) plus outside-click/Escape-to-close.
+- `products/index.html` — catalogue hub: hero, introduction, a combined category-navigation/featured-collections grid (avoiding two near-identical sections), a benefits strip (reusing the homepage trust indicators), and a closing CTA.
+- `products/utility-sheds.html`, `garden-rooms.html`, `summer-houses.html`, `garden-offices.html` — each with a premium hero, a visual-only filter bar (`css/components/catalogue.css`), category-specific marketing copy and photography, a 6-item feature-icon list (Pressure Treated, Made in Britain, Installation Available, Custom Sizes, Sustainable Timber, 10 Year Guarantee (placeholder)), a 3-image gallery preview, a related-products section (reusing `.card-product`, cross-linking the other three categories), and a CTA banner.
+- `css/components/catalogue.css` — new stylesheet for the feature-icon list and filter bar, used only on the 5 catalogue pages (not the homepage).
+- `css/components/navigation.css`, `js/modules/navigation.js` — dropdown styling and toggle/outside-click/Escape logic.
+- 5 new verified, licence-checked Unsplash photographs (Products landing hero + one lifestyle image per category); all other imagery reuses the existing verified pool from v0.3.2–v0.4.0.
+- Existing homepage Collection card CTAs and footer Products links now point to the real category pages instead of `#` placeholders — a direct, expected consequence of these pages now existing.
+
+**Acceptance Criteria:**
+- Every internal link across all 6 pages (30+ hrefs) verified to resolve with HTTP 200 — no dead links.
+- Products dropdown verified programmatically (not just visually): reveals on desktop hover, toggles on click, and correctly navigates to each category page; mobile accordion opens on tap and the whole mobile menu closes after navigating.
+- Re-verified across 375/768/1440px on all 6 pages: no horizontal overflow, no console errors.
+- No individual product specification pages, purchasing, or search exist — the architecture supports adding them later without restructuring.
+- Filter bar is clearly non-interactive (plain `<span>` pills, not disabled-looking buttons or fake links) with a "coming soon" caption, avoiding a false affordance.
+
+**Notes:** The four category pages share one structural template (hero → filters → intro → feature highlights → gallery → related products → CTA) with only content, images, and copy differing — this is the intended pattern for adding a fifth category later.
+
 ## [0.4.1] — 2026-07-03 — Global Announcement Bar & Header Enhancement
 
 **Objective:** Introduce a premium, reusable global announcement bar above the main navigation that rotates through short promotional messages, to improve customer confidence and give the business an easy way to surface key selling points (and, later, promotions) without touching the rest of the site.

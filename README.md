@@ -37,7 +37,12 @@ shedprojectwebsite/
 │   ├── main.js                       Entry point
 │   └── modules/                     navigation.js, animations.js, announcementBar.js
 ├── pages/                          Secondary HTML pages
-├── products/                        Shed product catalogue content
+├── products/                        Product catalogue pages
+│   ├── index.html                    Products landing page (catalogue hub)
+│   ├── utility-sheds.html
+│   ├── garden-rooms.html
+│   ├── summer-houses.html
+│   └── garden-offices.html
 ├── quote-builder/                   The quote builder tool
 └── docs/                           Project documentation
     ├── MASTER_DEVELOPMENT_STANDARD.md
@@ -58,6 +63,12 @@ A slim, full-width bar above the main navigation that rotates through short prom
 - **Behaviour:** fades between messages roughly every 5.5 seconds, pauses while hovered, and skips rotation entirely (showing only the first message) if the visitor's system has `prefers-reduced-motion` enabled.
 - **Styling:** uses the existing `--color-primary` / `--color-text-inverse` tokens — no new design tokens were introduced for this component.
 
+### Product Catalogue
+
+`products/index.html` is the catalogue hub, linking out to four category pages (`utility-sheds.html`, `garden-rooms.html`, `summer-houses.html`, `garden-offices.html`) — all one folder deep, so every internal link and asset path in those files is prefixed `../` relative to the repository root. They're reachable from the "Products" dropdown in the main navigation on every page.
+
+All four category pages share one structural template — hero, visual-only filter bar, introduction, feature highlights, gallery preview, related products, CTA banner — with only the content, imagery, and copy differing per category. Adding a fifth category means copying one of the existing category pages and adjusting content, not building a new layout. The filter bar (`css/components/catalogue.css`) is intentionally non-interactive; wire up real controls there when filtering is implemented.
+
 ## Local Development
 
 1. Clone the repository.
@@ -77,4 +88,4 @@ Every change should be scoped as a release with an **Objective, Governance, Scop
 
 ## Current Version
 
-**v0.4.1** — Global Announcement Bar & Header Enhancement. See [CHANGELOG.md](CHANGELOG.md) for the full release history.
+**v0.5.0** — Product Catalogue Framework. See [CHANGELOG.md](CHANGELOG.md) for the full release history.

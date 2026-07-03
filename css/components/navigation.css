@@ -120,6 +120,68 @@
 }
 
 /*
+  Products dropdown: an expandable accordion item on mobile (toggled by
+  JS), a hover/focus-revealed panel on desktop. The trigger is a <button>,
+  not a link, since it doesn't navigate anywhere itself.
+*/
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--font-weight-medium);
+  color: inherit;
+  background: none;
+  border: none;
+  padding: var(--space-3) 0;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger:focus-visible {
+  color: var(--color-primary);
+}
+
+.nav-dropdown-caret {
+  width: 0.6rem;
+  height: 0.6rem;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.nav-item-dropdown.is-open .nav-dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-left: var(--space-4);
+}
+
+.nav-item-dropdown.is-open .nav-dropdown-menu {
+  display: flex;
+}
+
+.nav-dropdown-menu a {
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
+  color: var(--color-primary);
+}
+
+/*
   The full horizontal menu (8 items + CTA) doesn't fit alongside the logo
   at tablet widths, so the hamburger persists through the tablet
   breakpoint and the desktop layout only applies from 1024px up. At that
@@ -166,5 +228,54 @@
   .nav-menu a:hover::after,
   .nav-menu a:focus-visible::after {
     transform: scaleX(1);
+  }
+
+  /* On desktop the caret still rotates to hint the open state, but the
+     panel itself opens on hover/focus rather than waiting for the click
+     that mobile relies on — .is-open (set by JS) covers keyboard/touch. */
+  .nav-item-dropdown:hover .nav-dropdown-caret,
+  .nav-item-dropdown:focus-within .nav-dropdown-caret {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: var(--space-2);
+    min-width: 12rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+    z-index: var(--z-overlay);
+  }
+
+  .nav-item-dropdown:hover .nav-dropdown-menu,
+  .nav-item-dropdown:focus-within .nav-dropdown-menu,
+  .nav-item-dropdown.is-open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    font-size: var(--text-sm);
+  }
+
+  .nav-dropdown-menu a:hover,
+  .nav-dropdown-menu a:focus-visible {
+    background: var(--color-surface-alt);
+    color: var(--color-primary);
   }
 }

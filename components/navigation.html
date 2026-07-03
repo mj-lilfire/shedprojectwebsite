@@ -1,15 +1,17 @@
 <!--
   Reusable site navigation.
 
-  This is the canonical source for the navigation markup. The project has
-  no templating or build step (Master Development Standard, Section 5), so
+  This is the canonical source for the navigation markup, written for use
+  from the repository root (i.e. by index.html). The project has no
+  templating or build step (Master Development Standard, Section 5), so
   this exact markup is inlined directly in index.html. When a new page is
-  added under pages/, copy this block in verbatim rather than re-authoring
-  it, so there is only ever one navigation component to maintain.
+  added under pages/ or products/, copy this block in and adjust every
+  relative href for that page's location — see products/utility-sheds.html
+  for a worked example one folder deep (index.html#about becomes
+  ../index.html#about, and products/garden-rooms.html becomes
+  garden-rooms.html).
 
-  Anchor links below (e.g. #garden-rooms) target sections on the homepage.
-  When this component is reused from a page other than index.html, prefix
-  those hrefs with the homepage path (e.g. ../index.html#garden-rooms).
+  Anchor links like #gallery-preview target sections on the homepage.
 -->
 <header class="site-header" data-site-header>
   <div class="container nav-container">
@@ -38,10 +40,26 @@
     <nav id="primary-navigation" class="primary-navigation" aria-label="Primary">
       <ul class="nav-menu">
         <li><a href="index.html#top">Home</a></li>
-        <li><a href="index.html#utility-sheds">Sheds</a></li>
-        <li><a href="index.html#garden-rooms">Garden Rooms</a></li>
-        <li><a href="index.html#summer-houses">Summer Houses</a></li>
-        <li><a href="index.html#garden-offices">Garden Offices</a></li>
+        <li class="nav-item-dropdown">
+          <button
+            type="button"
+            class="nav-dropdown-trigger"
+            aria-expanded="false"
+            aria-controls="products-dropdown-menu"
+          >
+            Products
+            <svg class="nav-dropdown-caret" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul id="products-dropdown-menu" class="nav-dropdown-menu">
+            <li><a href="products/index.html">All Products</a></li>
+            <li><a href="products/utility-sheds.html">Utility Sheds</a></li>
+            <li><a href="products/garden-rooms.html">Garden Rooms</a></li>
+            <li><a href="products/summer-houses.html">Summer Houses</a></li>
+            <li><a href="products/garden-offices.html">Garden Offices</a></li>
+          </ul>
+        </li>
         <li><a href="index.html#gallery-preview">Gallery</a></li>
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#contact">Contact</a></li>
